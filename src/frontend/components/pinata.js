@@ -1,6 +1,6 @@
 import axios from 'axios';
-const key = '';
-const secret = ''
+const key = '41fb013f0a0ea56174cb';
+const secret = '0e893df46d0193185935842501742e5df6184affaad7d2e05c5875f24705814a';
 export const pinJSONToIPFS = async(JSONBody) => {
     const url = `https://api.pinata.cloud/pinning/pinJSONToIPFS`;
     return axios
@@ -13,8 +13,7 @@ export const pinJSONToIPFS = async(JSONBody) => {
         .then(function (response) {
            return {
                success: true,
-               pinataUrl: "https://gateway.pinata.cloud/ipfs/" + response.
-data.IpfsHash
+               pinataUrl: "https://gateway.pinata.cloud/ipfs/" + response.data.IpfsHash
            };
         })
         .catch(function (error) {

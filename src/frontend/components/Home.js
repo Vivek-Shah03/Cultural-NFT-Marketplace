@@ -4,7 +4,6 @@ import { Buffer } from 'buffer'
 import { Row, Col, Card, Button } from 'react-bootstrap'
 import { wait } from '@testing-library/user-event/dist/utils'
 
-
 const Home = ({ marketplace, nft, account }) => {
   const [loading, setLoading] = useState(true)
   const [items, setItems] = useState([])
@@ -55,8 +54,19 @@ const Home = ({ marketplace, nft, account }) => {
       <h2>Loading...</h2>
     </main>
   )
+  
+    items.sort((a, b) => {
+      if( a.totalPrice < b.totalPrice )
+        return 1;
+      else
+        return -1;
+    })
+  // console.log(items)
   return (
     <div className="flex justify-center">
+      {/* <Button onClick={() => {
+
+      }}></Button> */}
       {items.length > 0?
         <div className="px-5 container">
           <Row xs={1} md={2} lg={4} className="g-4 py-5">

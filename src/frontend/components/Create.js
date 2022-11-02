@@ -76,7 +76,6 @@ const Create = ({ marketplace, nft,auction }) => {
   return (
 
     <>
-
       <section className='jumbotron breadcumb no-bg' style={{padding: '30px' }}>
         <div className='mainbreadcumb'>
           <div className='container'>
@@ -101,7 +100,9 @@ const Create = ({ marketplace, nft,auction }) => {
                 onChange={(e) => setImage(e.target.value)}
                 // onChange={uploadToIPFS}
               /> */}
-                <input type="file" onChange={(e) =>setImage(e.target.files[0])} required />
+                <div className='border'>
+                  <input type="file" onChange={(e) =>setImage(e.target.files[0])} required />
+                </div>
                 <Form.Control onChange={(e) =>setName(e.target.value)} size="lg" required type="text" placeholder="Name" />
                 <Form.Control onChange={(e) =>setDescription(e.target.value)} size="lg" required as="textarea" placeholder="Description" />
                 <Form.Control onChange={(e) => setPrice(e.target.value)} size="lg" required type="number"placeholder="Price in ETH" />

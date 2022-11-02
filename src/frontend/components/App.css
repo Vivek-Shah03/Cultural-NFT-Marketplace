@@ -1,3 +1,9 @@
+*,::after,::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +41,32 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.border{
+  border-radius: 10px;
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+  display: flex;
+}
+
+.blue{
+  font-weight: 600;
+  color: rgb(19, 154, 233);
+}
+
+.txt{
+  font-size: 1.2rem;
+}
+
+.navItems{
+  margin: 1vw;
+}
+
+.leftMargin {
+  margin-left: 15vw;
+}
+
+.textAlignLeft {
+  text-align: left;
 }

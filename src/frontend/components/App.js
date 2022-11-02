@@ -15,8 +15,9 @@ import NFTAddress from '../contractsData/NFT-address.json'
 import { useState } from 'react'
 import { ethers } from "ethers"
 import { Spinner } from 'react-bootstrap'
-
 import './App.css';
+import Hero from "./Hero";
+import GettingStarted from "./GettingStarted";
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -62,11 +63,14 @@ function App() {
           {loading ? (
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }}>
               <Spinner animation="border" style={{ display: 'flex' }} />
-              <p className='mx-3 my-0'>Awaiting Metamask Connection...</p>
+              <p className='mx-3 my-0 txt'>Please, Click the <span className="blue">Connect Wallet</span>  button!</p>
             </div>
           ) : (
             <Routes>
               <Route path="/" element={
+                <Hero/>
+              } />
+              <Route path="/collections" element={
                 <Home marketplace={marketplace} nft={nft} account={account}/>
               } />
               <Route path="/create" element={
@@ -77,6 +81,9 @@ function App() {
               } />
               <Route path="/my-purchases" element={
                 <MyPurchases marketplace={marketplace} nft={nft} account={account} />
+              } />
+              <Route path="/getting-started" element={
+                <GettingStarted />
               } />
             </Routes>
           )}
